@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import ContactsForm from './ContactsForm';
+import ContactList from './ContactList';
+
+
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+
+  function addContact(user) {
+       setContacts([...contacts, user]);
+  }
+
+  function editUser(newDetails , userId){
+       const u = contacts.map((user) => {
+         if (userId === user.id) {
+           return newDetails;
+         } else{
+           return user;
+         }
+       });
+       setContacts(u);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+    
+      
+        <ContactsForm addContact={addContact}/>   
+        <ContactList contacts={contacts} editUser={editUser}/>
+        
+      
+    
+
+    </>
   );
 }
 

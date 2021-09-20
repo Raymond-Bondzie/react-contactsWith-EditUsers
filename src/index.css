@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  background-color: rgb(210, 214, 209);
+  margin: 0;
+  padding: 0;
+}
+
+.form{
+  margin: 0;
+  padding: 0;
+}
+
+.input{
+  margin-top: 25px;
+  width:  200px;
+  height: 30px;
+
+}
+
+.label{
+  font-size: larger;
+  font-weight: bolder;
+
+}
