@@ -30,7 +30,8 @@ function ContactsForm(props){
         }
 
         return(
-            <form onSubmit={(e) => handleSubmit(e)} className="form">
+            <div className="form">
+            <form onSubmit={(e) => handleSubmit(e)} >
                 <label className="label">Name:</label>
                 <input 
                 name="name" 
@@ -61,9 +62,10 @@ function ContactsForm(props){
                 className="input" 
                 />
             <br/>
-                <input name="submit" type="submit" />
+                <input name="submit" type="submit" id="subBtn"/>
 
             </form>
+            </div>
         );
 }
 

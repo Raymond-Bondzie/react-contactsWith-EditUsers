@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import ContactsForm from './ContactsForm';
 import ContactList from './ContactList';
+import { Container, Row , Col} from 'react-bootstrap';
 
 
 
@@ -23,14 +24,16 @@ function App() {
   }
   return (
     <>
-    
-    
-      
-        <ContactsForm addContact={addContact}/>   
+    <Container>
+      <Row>
+        <Col md={4} className="bgOFcol4">
+        <ContactsForm addContact={addContact}/>
+        </Col>
+        <Col>    
         <ContactList contacts={contacts} editUser={editUser}/>
-        
-      
-    
+        </Col>
+      </Row>
+    </Container>
 
     </>
   );
