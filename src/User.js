@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Button, Modal , Card} from "react-bootstrap";
+import { Button, Modal} from "react-bootstrap";
 import EditContact from './EditContact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,6 +22,11 @@ function User(props) {
         <Button variant="primary" onClick={() => toggleModal()}>
         Edit
         </Button>
+
+      <Button variant="danger" onClick={() => props.deleteUser(user.id)}>
+        Delete
+      </Button>
+
         
         
 

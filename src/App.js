@@ -22,6 +22,14 @@ function App() {
        });
        setContacts(u);
   }
+
+  function deleteUser(userId) {
+    const filteredUsers = contacts.filter((user) => {
+      return userId !== user.id;
+    });
+
+    setContacts(filteredUsers);
+  }
   return (
     <>
     <Container>
@@ -30,7 +38,7 @@ function App() {
         <ContactsForm addContact={addContact}/>
         </Col>
         <Col>    
-        <ContactList contacts={contacts} editUser={editUser}/>
+        <ContactList contacts={contacts} deleteUser={deleteUser} editUser={editUser} />
         </Col>
       </Row>
     </Container>
