@@ -14,6 +14,8 @@ function User(props) {
         setShowModal(!showModal);
     }
 
+    
+    
     return (
         <>
           <h1>{user.name}</h1>
@@ -23,9 +25,12 @@ function User(props) {
         Edit
         </Button>
 
-      <Button variant="danger" onClick={() => props.deleteUser(user.id)}>
+      <Button variant="danger" onClick={() => 
+        props.deleteUser(user.id)}>
         Delete
       </Button>
+
+      <hr/>
 
         
         
