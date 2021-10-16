@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import { v4 as uuid } from "uuid";
+import {connect} from 'react-redux'
+import { addContact } from './actions/contactActions';
 
 
 
@@ -20,7 +22,7 @@ function ContactsForm(props){
                     id: uuid(),
                 };
             
-            props.addContact(newcontact);
+            props.addNewContact(newcontact);
             
             setName("");
             setPhone("");
@@ -69,4 +71,8 @@ function ContactsForm(props){
         );
 }
 
-export default ContactsForm;
+const mapDispatchToProps = {
+    addNewContact: addContact,
+};
+
+export default connect(null, mapDispatchToProps)  (ContactsForm);

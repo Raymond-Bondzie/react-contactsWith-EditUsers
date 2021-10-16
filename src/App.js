@@ -8,10 +8,7 @@ import { Container, Row , Col} from 'react-bootstrap';
 function App() {
   const [contacts, setContacts] = useState([]);
 
-  function addContact(user) {
-       setContacts([...contacts, user]);
-  }
-
+  
   function editUser(newDetails , userId){
        const u = contacts.map((user) => {
          if (userId === user.id) {
@@ -35,10 +32,10 @@ function App() {
     <Container>
       <Row>
         <Col md={4} className="bgOFcol4">
-        <ContactsForm addContact={addContact}/>
+        <ContactsForm/>
         </Col>
         <Col>    
-        <ContactList contacts={contacts} deleteUser={deleteUser} editUser={editUser} />
+        <ContactList  deleteUser={deleteUser} editUser={editUser} />
         </Col>
       </Row>
     </Container>

@@ -1,5 +1,6 @@
 import React from 'react'
 import User from './User';
+import {connect} from 'react-redux'
 
 
 
@@ -24,4 +25,10 @@ function ContactList(props){
         );
 }
 
-export default ContactList;
+const mapStateToprops = (state) => {
+    return {
+        contacts: state.contacts,
+    }
+}
+
+export default connect(mapStateToprops)  (ContactList);
