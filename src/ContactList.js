@@ -10,14 +10,16 @@ function ContactList(props){
 
             <>
                 
-                {props.contacts.map((user) =>{
+                {props.contacts.map((user , index) =>{
                        return(
+                           <div key={index}>
                         <User
                         user={user}
                         key={user.id}
                         deleteUser={props.deleteUser}
                         editUser={props.editUser}
                       />
+                      </div>
                        );
                    })}
             </>

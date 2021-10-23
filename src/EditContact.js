@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
+import { editContacts } from './actions/contactActions';
+import {connect} from 'react-redux'
 
 
 function EditContact(props) {
@@ -28,7 +30,7 @@ function EditContact(props) {
             id: props.user.id
         };
 
-        props.editUser(editedUser, props.user.id);
+        props.editContacts( props.user.id , editedUser);
         props.toggleModal();
     }
 
@@ -71,5 +73,9 @@ function EditContact(props) {
     );
 }
 
+const mapDispatchToProps = {
+  editContacts,
+}
 
-export default EditContact;
+
+export default connect(null ,mapDispatchToProps) (EditContact);
