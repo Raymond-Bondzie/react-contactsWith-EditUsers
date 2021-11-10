@@ -1,13 +1,18 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import ContactsForm from './ContactsForm';
 import ContactList from './ContactList';
 import { Container, Row , Col} from 'react-bootstrap';
+import { connect } from 'react-redux';
+import {getAllContacts} from './actions/contactActions'
 
 
 
-function App() {
+function App(props) {
   const [contacts, setContacts] = useState([]);
 
+  useEffect(() => {
+    props.getAllContacts()
+  }, [])
   
   function editUser(newDetails , userId){
        const u = contacts.map((user) => {
@@ -44,4 +49,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = {
+  getAllContacts,
+}
+
+export default connect(null, mapDispatchToProps) (App);

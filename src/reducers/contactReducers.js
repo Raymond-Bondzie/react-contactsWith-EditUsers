@@ -26,6 +26,10 @@ const contactReducers = (state= initialState, action) => {
             );
             return{...state, contacts: deleteContact};
 
+
+            case "SET_ALL_CONTACTS":
+                return{contacts : action.payload};
+
         default:
         return state ;
 
