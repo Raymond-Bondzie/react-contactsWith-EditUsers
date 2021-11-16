@@ -11,14 +11,14 @@ const contactReducers = (state= initialState, action) => {
 
         case "EDIT_CONTACT" :
             // console.log(action.payload);
-            const editedUser = state.contacts.map((user) => {
+            const editedContacts = state.contacts.map((user) => {
                 if(user.id === action.payload.userId) {
-                    return action.payload.editedUser;
+                    return action.payload.editedContacts;
                 }
                 return user;
             });
 
-            return {...state, contacts: editedUser};
+            return {...state, contacts: editedContacts};
 
         case "DELETE_CONTACT": 
             const deleteContact = state.contacts.filter(

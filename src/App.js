@@ -12,7 +12,7 @@ function App(props) {
 
   useEffect(() => {
     props.getAllContacts()
-  }, [])
+  }, []);
   
   function editUser(newDetails , userId){
        const u = contacts.map((user) => {
