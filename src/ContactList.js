@@ -29,7 +29,7 @@ function ContactList(props){
 
 const mapStateToprops = (state) => {
     return {
-        contacts: state.contacts,
+        contacts: state.contacts.contacts,
     }
 }
 
