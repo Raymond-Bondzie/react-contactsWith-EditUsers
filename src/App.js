@@ -1,9 +1,13 @@
 import React,{useState, useEffect} from 'react';
-import ContactsForm from './ContactsForm';
-import ContactList from './ContactList';
-import { Container, Row , Col} from 'react-bootstrap';
+// import ContactsForm from './ContactsForm';
+// import ContactList from './ContactList';
 import { connect } from 'react-redux';
 import {getAllContacts} from './actions/contactActions'
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import {BrowserRouter, Route} from 'react-router-dom'
+import ProtectedRoute from './ProtectedRoute';
 
 
 
@@ -34,7 +38,7 @@ function App(props) {
   }
   return (
     <>
-    <Container>
+    {/* <Container>
       <Row>
         <Col md={4} className="bgOFcol4">
         <ContactsForm/>
@@ -43,7 +47,14 @@ function App(props) {
         <ContactList  deleteUser={deleteUser} editUser={editUser} />
         </Col>
       </Row>
-    </Container>
+    </Container> */}
+    <BrowserRouter>
+     <ProtectedRoute exact path="/" component={Home} />
+     <Route path="/login" component={Login} />
+    <Route path="/register" component={Register} />
+    </BrowserRouter>
+
+
 
     </>
   );
